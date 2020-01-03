@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: sample-react-app
+    volumes:
+      - .:/react_app
+    ports:
+      - "3000:3000"
+      - "35729:35729"
+    command: sh -c "npm start"
